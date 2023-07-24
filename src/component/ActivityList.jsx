@@ -1,6 +1,6 @@
 import ActivityItem from "./ActivityItem";
 
-function ActivityList() {
+function ActivityList({ fetchActivities, activities }) {
   return (
     <div className="activity-list">
       <h3>Activities</h3>

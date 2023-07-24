@@ -1,14 +1,20 @@
-import { useState, useEffect, useContext } from "react";
-import { GlobalContext } from "../context/global.context";
+import { useEffect } from "react";
 
-function AddActivity() {
-  const { backendAPIInstance } = useContext(GlobalContext);
-  const [activities, setActivities] = useState([]);
-
+function AddActivity({ fetchActivities, activities }) {
   useEffect(() => {
     fetchActivities();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const colors = [
+    "violet",
+    "indigo",
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "red",
+  ];
 
   return (
     <div className="add-activity">
@@ -21,8 +27,8 @@ function AddActivity() {
         <div>
           <label>activity color: </label>
           <select id="color" name="color">
-            {activities.map((user) => (
-              <option>{}</option>
+            {colors.map((color) => (
+              <option>{color}</option>
             ))}
           </select>
         </div>

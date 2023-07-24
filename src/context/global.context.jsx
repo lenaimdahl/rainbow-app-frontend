@@ -8,9 +8,10 @@ const GlobalContextWrapper = ({ children }) => {
   const backendAPIInstance = new BackendAPI();
 
   const fetchActivities = async () => {
-    const { users } = await backendAPIInstance.getNonFriends();
-    setActivities(users);
+    const { activities } = await backendAPIInstance.getActivities();
+    setActivities(activities);
   };
+
   return (
     <GlobalContext.Provider
       value={{ backendAPIInstance, activities, setActivities, fetchActivities }}
