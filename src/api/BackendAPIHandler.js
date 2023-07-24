@@ -17,4 +17,14 @@ export class BackendAPI {
       console.error("Error while getting activities:", error);
     }
   }
+
+  async saveActivity(newActivity) {
+    try {
+      const { data } = await this.api.post("/api/new-activity", newActivity);
+      return data;
+    } catch (error) {
+      console.error("Error while saving activity:", error);
+      throw error;
+    }
+  }
 }
