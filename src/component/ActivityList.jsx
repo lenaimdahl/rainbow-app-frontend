@@ -1,14 +1,50 @@
 function ActivityList() {
   return (
-    <div>
+    <div className="activity-list">
       <h3>Activities</h3>
       <ul>
-        <li>Work</li>
-        <li>Time with Kids</li>
-        <li>Household</li>
-        <li>Sleep</li>
-        <li>Eat</li>
-        <li>Workout</li>
+        <li
+          style={{
+            backgroundColor: "pink",
+          }}
+        >
+          Work
+        </li>
+        <li
+          style={{
+            backgroundColor: "yellow",
+          }}
+        >
+          Kids
+        </li>
+        <li
+          style={{
+            backgroundColor: "green",
+          }}
+        >
+          Household
+        </li>
+        <li
+          style={{
+            backgroundColor: "blue",
+          }}
+        >
+          Sleep
+        </li>
+        <li
+          style={{
+            backgroundColor: "red",
+          }}
+        >
+          Eat
+        </li>
+        <li
+          style={{
+            backgroundColor: "orange",
+          }}
+        >
+          Workout
+        </li>
       </ul>
     </div>
   );
