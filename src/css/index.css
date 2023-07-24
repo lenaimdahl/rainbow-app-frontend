@@ -25,3 +25,8 @@ body {
   margin: 10px;
   border-radius: 20px;
 }
+
+.add-activity input {
+  margin: 5px;
+  border-radius: 5px;
+}
