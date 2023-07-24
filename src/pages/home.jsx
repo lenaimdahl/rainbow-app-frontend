@@ -1,5 +1,12 @@
+import ActivityList from "../component/ActivityList";
+
 function home() {
-  return <div>home</div>;
+  return (
+    <div>
+      <h3>Welcome</h3>
+      <ActivityList />
+    </div>
+  );
 }
 
 export default home;
