@@ -3,11 +3,19 @@ body {
 }
 
 .activity-list {
-  background-color: lightblue;
+  background-color: rgb(249, 247, 247);
+  border-radius: 20px;
   margin: 30px;
-  padding: 10px;
-  width: 250px;
+  padding: 20px;
+  width: 200px;
   font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.653),
+    0 6px 20px 0 rgba(204, 204, 204, 0.432);
+}
+.activity-list ul {
+  display: flex;
+  flex-direction: column;
 }
 .activity-list li {
   list-style-type: none;
