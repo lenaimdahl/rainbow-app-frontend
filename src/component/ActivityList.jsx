@@ -1,50 +1,16 @@
+import ActivityItem from "./ActivityItem";
+
 function ActivityList() {
   return (
     <div className="activity-list">
       <h3>Activities</h3>
       <ul>
-        <li
-          style={{
-            backgroundColor: "pink",
-          }}
-        >
-          Work
-        </li>
-        <li
-          style={{
-            backgroundColor: "yellow",
-          }}
-        >
-          Kids
-        </li>
-        <li
-          style={{
-            backgroundColor: "green",
-          }}
-        >
-          Household
-        </li>
-        <li
-          style={{
-            backgroundColor: "blue",
-          }}
-        >
-          Sleep
-        </li>
-        <li
-          style={{
-            backgroundColor: "red",
-          }}
-        >
-          Eat
-        </li>
-        <li
-          style={{
-            backgroundColor: "orange",
-          }}
-        >
-          Workout
-        </li>
+        <ActivityItem color={"pink"} type={"Work"} />
+        <ActivityItem color={"yellow"} type={"Kids"} />
+        <ActivityItem color={"green"} type={"Household"} />
+        <ActivityItem color={"blue"} type={"Sleep"} />
+        <ActivityItem color={"red"} type={"Eat"} />
+        <ActivityItem color={"orange"} type={"Workout"} />
       </ul>
     </div>
   );

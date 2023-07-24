@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.activity-list {
+.activity-container {
   background-color: rgb(249, 247, 247);
   border-radius: 20px;
   margin: 30px;
