@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build_lint_deploy:
-    name: Build, lint and deploy
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,5 +24,6 @@ jobs:
 
       - name: Build
         run: |
+          npm install
           npm ci
           npm run build
