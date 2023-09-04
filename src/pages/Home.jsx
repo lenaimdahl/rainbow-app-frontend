@@ -13,8 +13,7 @@ function Home() {
 
   return (
     <div>
-      <h3>Welcome</h3>
-      <div className="activity-container">
+      <div className="vertical-container">
         <ActivityList
           fetchActivities={fetchActivities}
           activities={activities}

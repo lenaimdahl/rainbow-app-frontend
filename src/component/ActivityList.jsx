@@ -2,7 +2,7 @@ import ActivityItem from "./ActivityItem";
 
 function ActivityList({ fetchActivities, activities }) {
   return (
-    <div className="activity-list">
+    <div className="vertical-list">
       <h3>Activities</h3>
       <ul>
         <ActivityItem color={"pink"} type={"Work"} />

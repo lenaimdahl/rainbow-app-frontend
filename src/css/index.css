@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.activity-container {
+.vertical-container {
   background-color: rgb(249, 247, 247);
   border-radius: 20px;
   margin: 30px;
@@ -13,11 +13,11 @@ body {
   box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.653),
     0 6px 20px 0 rgba(204, 204, 204, 0.432);
 }
-.activity-list ul {
+.vertical-list ul {
   display: flex;
   flex-direction: column;
 }
-.activity-list li {
+.vertical-list li {
   list-style-type: none;
   text-align: center;
   width: 100px;
@@ -29,4 +29,8 @@ body {
 .add-activity input {
   margin: 5px;
   border-radius: 5px;
+}
+
+#add-vertical-button {
+  background-color: green;
 }
