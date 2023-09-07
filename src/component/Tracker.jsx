@@ -4,7 +4,7 @@ import Timer from "./Timer";
 import ControlButtons from "./ControlButtons";
 import PickedActivity from "./PickedActivity";
 
-function Tracker() {
+function Tracker({ selectedActivity }) {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
@@ -43,9 +43,11 @@ function Tracker() {
     setTime(0);
   };
 
+  console.log(selectedActivity);
+
   return (
     <div className="stop-watch">
-      <PickedActivity />
+      <PickedActivity selectedActivity={selectedActivity} />
       <Timer time={time} />
       <ControlButtons
         active={isActive}
