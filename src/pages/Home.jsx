@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/global.context";
 import ActivityList from "../component/ActivityList";
 import AddActivity from "../component/AddActivity";
+import Tracker from "../component/Tracker";
 
 function Home() {
   const { fetchActivities, activities } = useContext(GlobalContext);
@@ -12,7 +13,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="flex">
       <div className="vertical-container">
         <ActivityList
           fetchActivities={fetchActivities}
@@ -23,6 +24,7 @@ function Home() {
           activities={activities}
         />
       </div>
+      <Tracker />
     </div>
   );
 }

@@ -2,6 +2,12 @@ body {
   margin: 0;
 }
 
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .vertical-container {
   background-color: rgb(249, 247, 247);
   border-radius: 20px;
