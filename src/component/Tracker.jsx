@@ -46,7 +46,7 @@ function Tracker({ selectedActivity }) {
   console.log(selectedActivity);
 
   return (
-    <div className="stop-watch">
+    <div className="stop-watch flex-column">
       <PickedActivity selectedActivity={selectedActivity} />
       <Timer time={time} />
       <ControlButtons

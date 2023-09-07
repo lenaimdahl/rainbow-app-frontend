@@ -18,7 +18,7 @@ function Home() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex-row">
       <div className="vertical-container">
         <ActivityList
           onActivityClick={handleActivityClick}
@@ -30,7 +30,7 @@ function Home() {
           activities={activities}
         />
       </div>
-      <Tracker selectedActivity={selectedActivity} />
+      {selectedActivity && <Tracker selectedActivity={selectedActivity} />}
     </div>
   );
 }
