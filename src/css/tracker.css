@@ -1,3 +1,11 @@
+.stop-watch {
+  margin-top: 150px;
+  background-color: rgb(223, 223, 223);
+  border-radius: 15px;
+  width: 250px;
+  height: 250px;
+}
+
 .timer {
   margin: 3rem 0;
   width: 100%;

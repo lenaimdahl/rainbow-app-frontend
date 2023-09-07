@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../css/tracker.css";
 import Timer from "./Timer";
 import ControlButtons from "./ControlButtons";
+import PickedActivity from "./PickedActivity";
 
 function Tracker() {
   const [isActive, setIsActive] = useState(false);
@@ -44,6 +45,7 @@ function Tracker() {
 
   return (
     <div className="stop-watch">
+      <PickedActivity />
       <Timer time={time} />
       <ControlButtons
         active={isActive}
