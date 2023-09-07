@@ -1,23 +1,33 @@
 function ControlButtons(props) {
   const StartButton = (
-    <div className="btn btn-one btn-start" onClick={props.handleStart}>
+    <button className="btn-one btn-start" onClick={props.handleStart}>
       Start
-    </div>
+    </button>
   );
+
   const ActiveButtons = (
     <div className="btn-grp">
-      <div className="btn btn-two" onClick={props.handleReset}>
+      <button className="btn-reset" onClick={props.handleReset}>
         Reset
-      </div>
-      <div className="btn btn-one" onClick={props.handlePauseResume}>
+      </button>
+      <button className="btn-pause" onClick={props.handlePauseResume}>
         {props.isPaused ? "Resume" : "Pause"}
-      </div>
+      </button>
+    </div>
+  );
+
+  const StopButton = props.active && (
+    <div className="btn-grp">
+      <button className="btn-stop" onClick={props.handleStop}>
+        Stop
+      </button>
     </div>
   );
 
   return (
     <div className="Control-Buttons">
       <div>{props.active ? ActiveButtons : StartButton}</div>
+      <div>{StopButton}</div>
     </div>
   );
 }

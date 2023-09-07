@@ -37,6 +37,11 @@ function Tracker() {
     setTime(0);
   };
 
+  const handleStop = () => {
+    setIsActive(false);
+    setTime(0);
+  };
+
   return (
     <div className="stop-watch">
       <Timer time={time} />
@@ -46,6 +51,7 @@ function Tracker() {
         handleStart={handleStart}
         handlePauseResume={handlePauseResume}
         handleReset={handleReset}
+        handleStop={handleStop}
       />
     </div>
   );
