@@ -7,6 +7,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -25,10 +26,12 @@ body {
   box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.653),
     0 6px 20px 0 rgba(204, 204, 204, 0.432);
 }
+
 .vertical-list ul {
   display: flex;
   flex-direction: column;
 }
+
 .add-activity input {
   margin: 5px;
   border-radius: 5px;
