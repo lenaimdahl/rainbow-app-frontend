@@ -21,19 +21,17 @@ function Home() {
   return (
     <>
       <Navigationbar />
-      <div className="flex-row">
-        <div className="vertical-container">
-          <ActivityList
-            onActivityClick={handleActivityClick}
-            fetchActivities={fetchActivities}
-            activities={activities}
-          />
-          <AddActivity
-            fetchActivities={fetchActivities}
-            activities={activities}
-          />
-        </div>
+      <div className="vertical-container">
         {selectedActivity && <Tracker selectedActivity={selectedActivity} />}
+        <ActivityList
+          onActivityClick={handleActivityClick}
+          fetchActivities={fetchActivities}
+          activities={activities}
+        />
+        <AddActivity
+          fetchActivities={fetchActivities}
+          activities={activities}
+        />
       </div>
     </>
   );

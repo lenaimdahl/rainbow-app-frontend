@@ -37,7 +37,7 @@ function AddActivity({ fetchActivities, activities }) {
   ];
 
   return (
-    <div className="add-activity">
+    <div className="flex-column">
       <h2>Add an Activity</h2>
       <form onSubmit={handleAddActivity}>
         <div>
