@@ -20,7 +20,7 @@ export class BackendAPI {
 
   async saveActivity(newActivity) {
     try {
-      const { data } = await this.api.post("/api/new-activity", newActivity);
+      const { data } = await this.api.post("/api/activities", newActivity);
       return data;
     } catch (error) {
       console.error("Error while saving activity:", error);
