@@ -3,6 +3,7 @@ import { GlobalContext } from "../context/global.context";
 import ActivityList from "../component/ActivityList";
 import AddActivity from "../component/AddActivity";
 import Tracker from "../component/Tracker";
+import Navigationbar from "../component/Navigationbar";
 
 function Home() {
   const { fetchActivities, activities } = useContext(GlobalContext);
@@ -18,20 +19,23 @@ function Home() {
   };
 
   return (
-    <div className="flex-row">
-      <div className="vertical-container">
-        <ActivityList
-          onActivityClick={handleActivityClick}
-          fetchActivities={fetchActivities}
-          activities={activities}
-        />
-        <AddActivity
-          fetchActivities={fetchActivities}
-          activities={activities}
-        />
+    <>
+      <Navigationbar />
+      <div className="flex-row">
+        <div className="vertical-container">
+          <ActivityList
+            onActivityClick={handleActivityClick}
+            fetchActivities={fetchActivities}
+            activities={activities}
+          />
+          <AddActivity
+            fetchActivities={fetchActivities}
+            activities={activities}
+          />
+        </div>
+        {selectedActivity && <Tracker selectedActivity={selectedActivity} />}
       </div>
-      {selectedActivity && <Tracker selectedActivity={selectedActivity} />}
-    </div>
+    </>
   );
 }
 
