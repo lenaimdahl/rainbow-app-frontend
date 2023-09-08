@@ -37,10 +37,10 @@ function AddActivity({ fetchActivities, activities }) {
   ];
 
   return (
-    <div className="flex-column">
-      <h2>Add an Activity</h2>
-      <form onSubmit={handleAddActivity}>
-        <div>
+    <div>
+      <form className="flex-column-left" onSubmit={handleAddActivity}>
+        <h2>Add an Activity</h2>
+        <div className="margin">
           <label>activity type: </label>
           <input
             type="string"
@@ -49,7 +49,7 @@ function AddActivity({ fetchActivities, activities }) {
             onChange={(event) => setType(event.target.value)}
           />
         </div>
-        <div>
+        <div className="margin">
           <label>activity color: </label>
           <select
             id="color"
@@ -61,7 +61,7 @@ function AddActivity({ fetchActivities, activities }) {
             ))}
           </select>
         </div>
-        <button id="add-activity-button" type="submit">
+        <button className="margin" id="add-activity-button" type="submit">
           +
         </button>
       </form>

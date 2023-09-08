@@ -11,6 +11,7 @@ function ActivityList({ fetchActivities, activities, onActivityClick }) {
             style={{
               backgroundColor: activity.color,
               cursor: "pointer",
+              margin: 5,
             }}
             onClick={() => onActivityClick(activity)}
           >
