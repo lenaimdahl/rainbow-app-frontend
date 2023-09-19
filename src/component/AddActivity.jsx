@@ -4,8 +4,8 @@ import { GlobalContext } from "../context/global.context";
 function AddActivity({ fetchActivities, activities }) {
   const { backendAPIInstance } = useContext(GlobalContext);
   const [isClicked, setIsClicked] = useState(false);
-  const [type, setType] = useState("");
-  const [color, setColor] = useState("");
+  const [name, setName] = useState("");
+  const [points, setPoints] = useState();
 
   useEffect(() => {
     fetchActivities();
@@ -17,8 +17,8 @@ function AddActivity({ fetchActivities, activities }) {
 
     try {
       const newActivity = {
-        type,
-        color,
+        name,
+        points,
       };
       await backendAPIInstance.saveActivity(newActivity);
       await fetchActivities();
@@ -26,16 +26,6 @@ function AddActivity({ fetchActivities, activities }) {
       console.error(error);
     }
   };
-
-  const colors = [
-    "violet",
-    "indigo",
-    "blue",
-    "green",
-    "yellow",
-    "orange",
-    "red",
-  ];
 
   return (
     <div>
@@ -62,20 +52,17 @@ function AddActivity({ fetchActivities, activities }) {
             <input
               type="string"
               name="type"
-              value={type}
-              onChange={(event) => setType(event.target.value)}
+              value={name}
+              onChange={(event) => setName(event.target.value)}
             />
           </div>
           <div className="margin">
-            <select
-              id="color"
-              name="color"
-              onChange={(event) => setColor(event.target.value)}
-            >
-              {colors.map((color) => (
-                <option>{color}</option>
-              ))}
-            </select>
+            <input
+              type="number"
+              name="type"
+              value={[points]}
+              onChange={(event) => setPoints(event.target.value)}
+            />
           </div>
           <button className="margin" id="add-activity-button" type="submit">
             +

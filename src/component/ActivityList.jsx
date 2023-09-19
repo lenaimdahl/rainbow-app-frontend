@@ -8,21 +8,18 @@ function ActivityList({ activities, onActivityClick }) {
         {activities.map((activity, index) => (
           <div
             style={{
-              backgroundColor: activity.color,
               cursor: "pointer",
               margin: 5,
-              width: 150,
+              width: 120,
             }}
           >
             <ListGroup.Item
-              style={{
-                backgroundColor: activity.color,
-              }}
               key={index}
               className="activity-list"
               onClick={() => onActivityClick(activity)}
             >
-              {activity.type}
+              {activity.points}
+              {activity.name}
             </ListGroup.Item>
           </div>
         ))}
