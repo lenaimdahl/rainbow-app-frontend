@@ -11,7 +11,6 @@ root.render(
   <React.StrictMode>
     <GlobalContextWrapper>
       <Router>
-        {" "}
         <App />
       </Router>
     </GlobalContextWrapper>
