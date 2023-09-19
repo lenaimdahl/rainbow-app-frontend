@@ -3,8 +3,9 @@ import { GlobalContext } from "../context/global.context";
 
 function AddActivity({ fetchActivities, activities }) {
   const { backendAPIInstance } = useContext(GlobalContext);
-  const [type, setType] = useState("");
-  const [color, setColor] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
+  const [name, setName] = useState("");
+  const [points, setPoints] = useState();
 
   useEffect(() => {
     fetchActivities();
@@ -16,8 +17,8 @@ function AddActivity({ fetchActivities, activities }) {
 
     try {
       const newActivity = {
-        type,
-        color,
+        name,
+        points,
       };
       await backendAPIInstance.saveActivity(newActivity);
       await fetchActivities();
@@ -26,45 +27,48 @@ function AddActivity({ fetchActivities, activities }) {
     }
   };
 
-  const colors = [
-    "violet",
-    "indigo",
-    "blue",
-    "green",
-    "yellow",
-    "orange",
-    "red",
-  ];
-
   return (
     <div>
-      <form className="flex-column-left" onSubmit={handleAddActivity}>
-        <h2>Add an Activity</h2>
-        <div className="margin">
-          <label>activity type: </label>
-          <input
-            type="string"
-            name="type"
-            value={type}
-            onChange={(event) => setType(event.target.value)}
-          />
-        </div>
-        <div className="margin">
-          <label>activity color: </label>
-          <select
-            id="color"
-            name="color"
-            onChange={(event) => setColor(event.target.value)}
-          >
-            {colors.map((color) => (
-              <option>{color}</option>
-            ))}
-          </select>
-        </div>
-        <button className="margin" id="add-activity-button" type="submit">
-          +
+      {!isClicked && (
+        <button
+          className="button-open"
+          type="submit"
+          onClick={() => setIsClicked(!isClicked)}
+        >
+          + New Activity
         </button>
-      </form>
+      )}
+      {isClicked && (
+        <form className="flex-column-left" onSubmit={handleAddActivity}>
+          <div className="margin">
+            <button
+              className="button-close"
+              type="submit"
+              onClick={() => setIsClicked(!isClicked)}
+            >
+              x
+            </button>
+            <label>Name: </label>
+            <input
+              type="string"
+              name="type"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+          <div className="margin">
+            <input
+              type="number"
+              name="type"
+              value={points}
+              onChange={(event) => setPoints(event.target.value)}
+            />
+          </div>
+          <button className="margin" id="add-activity-button" type="submit">
+            +
+          </button>
+        </form>
+      )}
     </div>
   );
 }

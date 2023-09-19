@@ -3,13 +3,13 @@ function PickedActivity(props) {
     <div>
       <td
         style={{
-          backgroundColor: props.selectedActivity.color,
+          backgroundColor: props.selectedActivity.points,
           width: 15,
           height: 15,
           cursor: "pointer",
         }}
       ></td>
-      <td>{props.selectedActivity.type}</td>
+      <td>{props.selectedActivity.name}</td>
     </div>
   );
 }

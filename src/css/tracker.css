@@ -35,17 +35,15 @@
 }
 
 button {
-  width: 120px;
-  height: 60px;
-  border-radius: 25px;
-  margin: 0px 6px;
+  width: 80px;
+  height: 40px;
+  border-radius: 30px;
   display: flex;
   border: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   color: #f5f5f5;
-  border-radius: 15px;
 }
 .btn-start {
   background-color: #007f1c;
