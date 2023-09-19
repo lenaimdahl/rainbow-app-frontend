@@ -6,18 +6,25 @@ function ActivityList({ activities, onActivityClick }) {
       <h3>Activities</h3>
       <ListGroup>
         {activities.map((activity, index) => (
-          <ListGroup.Item
-            key={index}
-            className="activity-list"
+          <div
             style={{
               backgroundColor: activity.color,
               cursor: "pointer",
               margin: 5,
+              width: 150,
             }}
-            onClick={() => onActivityClick(activity)}
           >
-            {activity.type}
-          </ListGroup.Item>
+            <ListGroup.Item
+              style={{
+                backgroundColor: activity.color,
+              }}
+              key={index}
+              className="activity-list"
+              onClick={() => onActivityClick(activity)}
+            >
+              {activity.type}
+            </ListGroup.Item>
+          </div>
         ))}
       </ListGroup>
     </>

@@ -41,7 +41,7 @@ function AddActivity({ fetchActivities, activities }) {
     <div>
       {!isClicked && (
         <button
-          className="btn-close"
+          className="button-open"
           type="submit"
           onClick={() => setIsClicked(!isClicked)}
         >
@@ -52,11 +52,11 @@ function AddActivity({ fetchActivities, activities }) {
         <form className="flex-column-left" onSubmit={handleAddActivity}>
           <div className="margin">
             <button
-              className="btn-close"
+              className="button-close"
               type="submit"
               onClick={() => setIsClicked(!isClicked)}
             >
-              close
+              x
             </button>
             <label>Name: </label>
             <input
