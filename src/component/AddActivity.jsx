@@ -3,6 +3,7 @@ import { GlobalContext } from "../context/global.context";
 
 function AddActivity({ fetchActivities, activities }) {
   const { backendAPIInstance } = useContext(GlobalContext);
+  const [isClicked, setIsClicked] = useState(false);
   const [type, setType] = useState("");
   const [color, setColor] = useState("");
 
@@ -38,33 +39,49 @@ function AddActivity({ fetchActivities, activities }) {
 
   return (
     <div>
-      <form className="flex-column-left" onSubmit={handleAddActivity}>
-        <h2>Add an Activity</h2>
-        <div className="margin">
-          <label>activity type: </label>
-          <input
-            type="string"
-            name="type"
-            value={type}
-            onChange={(event) => setType(event.target.value)}
-          />
-        </div>
-        <div className="margin">
-          <label>activity color: </label>
-          <select
-            id="color"
-            name="color"
-            onChange={(event) => setColor(event.target.value)}
-          >
-            {colors.map((color) => (
-              <option>{color}</option>
-            ))}
-          </select>
-        </div>
-        <button className="margin" id="add-activity-button" type="submit">
-          +
+      {!isClicked && (
+        <button
+          className="btn-close"
+          type="submit"
+          onClick={() => setIsClicked(!isClicked)}
+        >
+          + New Activity
         </button>
-      </form>
+      )}
+      {isClicked && (
+        <form className="flex-column-left" onSubmit={handleAddActivity}>
+          <div className="margin">
+            <button
+              className="btn-close"
+              type="submit"
+              onClick={() => setIsClicked(!isClicked)}
+            >
+              close
+            </button>
+            <label>Name: </label>
+            <input
+              type="string"
+              name="type"
+              value={type}
+              onChange={(event) => setType(event.target.value)}
+            />
+          </div>
+          <div className="margin">
+            <select
+              id="color"
+              name="color"
+              onChange={(event) => setColor(event.target.value)}
+            >
+              {colors.map((color) => (
+                <option>{color}</option>
+              ))}
+            </select>
+          </div>
+          <button className="margin" id="add-activity-button" type="submit">
+            +
+          </button>
+        </form>
+      )}
     </div>
   );
 }

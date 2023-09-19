@@ -27,18 +27,7 @@ body {
   margin: 50px 0;
 }
 
-.vertical-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 150px;
-  background-color: rgb(249, 247, 247);
-  border-radius: 20px;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.653),
-    0 6px 20px 0 rgba(204, 204, 204, 0.432);
+.activity-list {
 }
 
 .add-activity input {
@@ -48,4 +37,12 @@ body {
 
 #add-activity-button {
   background-color: green;
+}
+.btn-close {
+  width: 120px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  color: #f5f5f5;
 }

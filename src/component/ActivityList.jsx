@@ -1,6 +1,6 @@
 import ListGroup from "react-bootstrap/ListGroup";
 
-function ActivityList({ fetchActivities, activities, onActivityClick }) {
+function ActivityList({ activities, onActivityClick }) {
   return (
     <>
       <h3>Activities</h3>
@@ -8,6 +8,7 @@ function ActivityList({ fetchActivities, activities, onActivityClick }) {
         {activities.map((activity, index) => (
           <ListGroup.Item
             key={index}
+            className="activity-list"
             style={{
               backgroundColor: activity.color,
               cursor: "pointer",
