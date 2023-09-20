@@ -35,7 +35,7 @@ function AddActivity({ fetchActivities, activities }) {
           type="submit"
           onClick={() => setIsClicked(!isClicked)}
         >
-          + New Activity
+          +
         </button>
       )}
       {isClicked && (
