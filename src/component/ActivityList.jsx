@@ -1,19 +1,30 @@
-function ActivityList({ activities, onActivityClick }) {
+import { useState } from "react";
+
+function ActivityList({ activities }) {
+  const [points, setPoints] = useState(null);
+
+  const handleActivityClick = (activity) => {
+    setPoints(activity.points);
+  };
+
   return (
     <>
       <h3>All Activities</h3>
       <div className="flex-wrap">
         {activities.map((activity, index) => (
           <div className="card">
-            <div key={index} onClick={() => onActivityClick(activity)}>
-              <div
-                style={{
-                  color: "red",
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                {activity.points} 🏆
+            <div>
+              <div className="box" onClick={() => handleActivityClick}></div>
+              <div key={index}>
+                <div
+                  style={{
+                    color: "red",
+                    fontSize: 18,
+                    fontWeight: "bold",
+                  }}
+                >
+                  {activity.points} 🏆
+                </div>
               </div>
               <div
                 style={{
@@ -22,7 +33,6 @@ function ActivityList({ activities, onActivityClick }) {
                   fontWeight: "bold",
                 }}
               >
-                {" "}
                 {activity.name}
               </div>
             </div>

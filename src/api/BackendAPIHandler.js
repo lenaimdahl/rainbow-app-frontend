@@ -11,7 +11,6 @@ export class BackendAPI {
   async getActivities() {
     try {
       const { data } = await this.api.get("/api/activities");
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Error while getting activities:", error);
@@ -25,6 +24,16 @@ export class BackendAPI {
     } catch (error) {
       console.error("Error while saving activity:", error);
       throw error;
+    }
+  }
+
+  async getPoints() {
+    try {
+      const { data } = await this.api.get("/api/points");
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error while getting points:", error);
     }
   }
 }

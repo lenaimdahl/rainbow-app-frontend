@@ -93,5 +93,12 @@ nav {
   height: 100;
   padding: 7px;
   margin: 5px;
+}
+.box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #ccc;
+  border: 1px solid #ff0000;
   cursor: pointer;
 }

@@ -12,23 +12,11 @@ function Overview() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const [selectedActivity, setSelectedActivity] = useState(null);
-
-  // const handleActivityClick = (activity) => {
-  //   setSelectedActivity(activity);
-  // };
-
   return (
     <div>
       <Navigationbar />
-      {/* {selectedActivity && ( */}
       <AddActivity fetchActivities={fetchActivities} activities={activities} />
-      <ActivityList
-        // onActivityClick={handleActivityClick}
-        fetchActivities={fetchActivities}
-        activities={activities}
-      />
-      {/* )} */}
+      <ActivityList fetchActivities={fetchActivities} activities={activities} />
     </div>
   );
 }
