@@ -28,7 +28,12 @@ function AddActivity({ fetchActivities, activities }) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: 10,
+      }}
+    >
       {!isClicked && (
         <button
           className="button-open"
