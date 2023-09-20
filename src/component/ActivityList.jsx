@@ -1,15 +1,30 @@
+import { useContext } from "react";
+import { GlobalContext } from "../context/global.context";
+
 function ActivityList({ activities }) {
-  const handleActivityClick = (activity) => {};
+  const { backendAPIInstance } = useContext(GlobalContext);
+
+  const handleFinishedActivity = async (id, event) => {
+    event.preventDefault();
+    try {
+      await backendAPIInstance.saveFinishedActivity(id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
       <h3>All Activities</h3>
       <div className="flex-wrap">
-        {activities.map((activity, index) => (
+        {activities.map((activity) => (
           <div className="card">
             <div>
-              <div className="box" onClick={() => handleActivityClick}></div>
-              <div key={index}>
+              <div
+                className="box"
+                onClick={(event) => handleFinishedActivity(activity._id, event)}
+              ></div>
+              <div key={activity._id}>
                 <div
                   style={{
                     color: "red",

@@ -20,7 +20,7 @@ function AddActivity({ fetchActivities, activities }) {
         name,
         points,
       };
-      await backendAPIInstance.saveActivity(newActivity);
+      await backendAPIInstance.saveNewActivity(newActivity);
       await fetchActivities();
     } catch (error) {
       console.error(error);

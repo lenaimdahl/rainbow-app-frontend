@@ -17,7 +17,7 @@ export class BackendAPI {
     }
   }
 
-  async saveActivity(newActivity) {
+  async saveNewActivity(newActivity) {
     try {
       const { data } = await this.api.post("/api/activities", newActivity);
       return data;
@@ -27,13 +27,13 @@ export class BackendAPI {
     }
   }
 
-  async getPoints() {
+  async saveFinishedActivity(id) {
     try {
-      const { data } = await this.api.get("/api/points");
-      console.log(data);
+      const { data } = await this.api.post("/api/user/userId/activities", id);
       return data;
     } catch (error) {
-      console.error("Error while getting the points:", error);
+      console.error("Error while saving users activity:", error);
+      throw error;
     }
   }
 }
