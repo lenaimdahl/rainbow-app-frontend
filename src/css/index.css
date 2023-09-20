@@ -16,13 +16,6 @@ body {
   margin: 50px 0;
 }
 
-.flex-column-left {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 50px 0;
-}
-
 .flex-wrap {
   display: flex;
   flex-direction: row;
@@ -34,9 +27,16 @@ h3 {
   font-weight: bold;
 }
 
-.add-activity input {
+.activity-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-form input {
+  width: 60px;
   margin: 5px;
-  border-radius: 5px;
 }
 
 .button-open {
@@ -46,8 +46,9 @@ h3 {
   border: none;
   cursor: pointer;
   color: #ffffff;
-  background-color: rgb(3, 183, 0);
+  background-color: rgba(3, 183, 0, 0.56);
 }
+
 .button-close {
   width: 30px;
   height: 30px;
@@ -55,13 +56,23 @@ h3 {
   border: none;
   cursor: pointer;
   color: #ffffff;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.579);
 }
+
+.button-submit {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: rgba(0, 42, 169, 0.626);
+}
+
 nav {
   border-bottom: 1px solid grey;
   padding: 20px;
   display: flex;
-
   justify-content: center;
 }
 

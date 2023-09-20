@@ -39,16 +39,15 @@ function AddActivity({ fetchActivities, activities }) {
         </button>
       )}
       {isClicked && (
-        <form className="flex-column-left" onSubmit={handleAddActivity}>
-          <div className="margin">
-            <button
-              className="button-close"
-              type="submit"
-              onClick={() => setIsClicked(!isClicked)}
-            >
-              x
-            </button>
-            <label>Name: </label>
+        <form className="activity-form" onSubmit={handleAddActivity}>
+          <button
+            className="button-close"
+            type="submit"
+            onClick={() => setIsClicked(!isClicked)}
+          >
+            x
+          </button>
+          <div>
             <input
               type="string"
               name="type"
@@ -56,7 +55,7 @@ function AddActivity({ fetchActivities, activities }) {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-          <div className="margin">
+          <div>
             <input
               type="number"
               name="type"
@@ -64,7 +63,11 @@ function AddActivity({ fetchActivities, activities }) {
               onChange={(event) => setPoints(event.target.value)}
             />
           </div>
-          <button className="margin" id="add-activity-button" type="submit">
+          <button
+            className="button-submit"
+            id="add-activity-button"
+            type="submit"
+          >
             +
           </button>
         </form>
