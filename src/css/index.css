@@ -16,10 +16,6 @@ body {
   margin: 50px 0;
 }
 
-.margin {
-  margin: 10px;
-}
-
 .flex-column-left {
   display: flex;
   flex-direction: column;
@@ -27,7 +23,15 @@ body {
   margin: 50px 0;
 }
 
-.activity-list {
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+h3 {
+  text-align: center;
+  font-weight: bold;
 }
 
 .add-activity input {
@@ -35,9 +39,6 @@ body {
   border-radius: 5px;
 }
 
-#add-activity-button {
-  background-color: green;
-}
 .button-open {
   width: 30px;
   height: 30px;
@@ -66,12 +67,6 @@ nav {
 
 .nav-link {
   padding: 0 15px;
-}
-
-.flex-wrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .card {

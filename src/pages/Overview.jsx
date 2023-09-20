@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../context/global.context";
 import ActivityList from "../component/ActivityList";
 import Navigationbar from "../component/Navigationbar";
