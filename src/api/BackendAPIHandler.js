@@ -33,7 +33,7 @@ export class BackendAPI {
       console.log(data);
       return data;
     } catch (error) {
-      console.error("Error while getting points:", error);
+      console.error("Error while getting the points:", error);
     }
   }
 }

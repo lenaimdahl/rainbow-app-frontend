@@ -1,11 +1,5 @@
-import { useState } from "react";
-
 function ActivityList({ activities }) {
-  const [points, setPoints] = useState(null);
-
-  const handleActivityClick = (activity) => {
-    setPoints(activity.points);
-  };
+  const handleActivityClick = (activity) => {};
 
   return (
     <>
