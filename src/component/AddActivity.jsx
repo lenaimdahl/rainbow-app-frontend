@@ -55,7 +55,8 @@ function AddActivity({ fetchActivities, activities }) {
           <div>
             <input
               type="string"
-              name="type"
+              placeholder="activity"
+              name="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
@@ -63,7 +64,8 @@ function AddActivity({ fetchActivities, activities }) {
           <div>
             <input
               type="number"
-              name="type"
+              name="points"
+              placeholder="1"
               value={points}
               onChange={(event) => setPoints(event.target.value)}
             />
