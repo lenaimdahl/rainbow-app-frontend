@@ -5,22 +5,22 @@ import Navigationbar from "../component/Navigationbar";
 
 function Overview() {
   const { fetchActivities, activities } = useContext(GlobalContext);
-  const [selectedActivity, setSelectedActivity] = useState(null);
+  // const [selectedActivity, setSelectedActivity] = useState(null);
 
-  const handleActivityClick = (activity) => {
-    setSelectedActivity(activity);
-  };
+  // const handleActivityClick = (activity) => {
+  //   setSelectedActivity(activity);
+  // };
 
   return (
     <div>
       <Navigationbar />
-      {selectedActivity && (
-        <ActivityList
-          onActivityClick={handleActivityClick}
-          fetchActivities={fetchActivities}
-          activities={activities}
-        />
-      )}
+      {/* {selectedActivity && ( */}
+      <ActivityList
+        // onActivityClick={handleActivityClick}
+        fetchActivities={fetchActivities}
+        activities={activities}
+      />
+      {/* )} */}
     </div>
   );
 }

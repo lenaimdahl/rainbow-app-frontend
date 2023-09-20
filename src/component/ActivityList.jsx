@@ -1,29 +1,34 @@
-import ListGroup from "react-bootstrap/ListGroup";
-
 function ActivityList({ activities, onActivityClick }) {
   return (
     <>
-      <h3>Activities</h3>
-      <ListGroup>
+      <h3>All Activities</h3>
+      <div className="flex-wrap">
         {activities.map((activity, index) => (
-          <div
-            style={{
-              cursor: "pointer",
-              margin: 5,
-              width: 120,
-            }}
-          >
-            <ListGroup.Item
-              key={index}
-              className="activity-list"
-              onClick={() => onActivityClick(activity)}
-            >
-              {activity.points}
-              {activity.name}
-            </ListGroup.Item>
+          <div className="card">
+            <div key={index} onClick={() => onActivityClick(activity)}>
+              <div
+                style={{
+                  color: "red",
+                  fontSize: 18,
+                  fontWeight: "bold",
+                }}
+              >
+                {activity.points} 🏆
+              </div>
+              <div
+                style={{
+                  paddingTop: 10,
+                  fontSize: 18,
+                  fontWeight: "bold",
+                }}
+              >
+                {" "}
+                {activity.name}
+              </div>
+            </div>
           </div>
         ))}
-      </ListGroup>
+      </div>
     </>
   );
 }

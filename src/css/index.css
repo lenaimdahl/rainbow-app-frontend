@@ -67,3 +67,19 @@ nav {
 .nav-link {
   padding: 0 15px;
 }
+
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid lightcoral;
+  text-align: center;
+  width: 100px;
+  height: 100;
+  padding: 7px;
+  margin: 5px;
+  cursor: pointer;
+}
