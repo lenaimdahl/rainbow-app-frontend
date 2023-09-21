@@ -6,6 +6,35 @@ export class BackendAPI {
     this.api = axios.create({
       baseURL: API_URL,
     });
+
+    this.api.interceptors.request.use((config) => {
+      const storedToken = localStorage.getItem("authToken");
+      if (storedToken) {
+        config.headers = { Authorization: `Bearer ${storedToken}` };
+      }
+      return config;
+    });
+
+    this.api.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        // checks if the user is logged in
+        if (error.response.status === 401) {
+          window.util.logout();
+        } else {
+          throw error;
+        }
+      }
+    );
+  }
+
+  async login(loginData) {
+    try {
+      const { data } = await this.api.post("/auth/login", loginData);
+      return data;
+    } catch (error) {
+      console.error("Error while logging in:", error);
+    }
   }
 
   async getActivities() {
