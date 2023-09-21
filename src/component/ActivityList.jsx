@@ -13,13 +13,13 @@ function ActivityList({ activities }) {
       setClickedActivityId(id);
       try {
         await backendAPIInstance.saveFinishedActivity(id);
-        //setIsClicked(false)
-        //backgroundbolor of bos back to grey
+        setClickedActivityId(null);
       } catch (error) {
         console.error(error);
       }
     }
   };
+  console.log(clickedActivityId);
 
   return (
     <>

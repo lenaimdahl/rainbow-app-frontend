@@ -27,10 +27,14 @@ export class BackendAPI {
     }
   }
 
-  async saveFinishedActivity(id) {
+  async saveFinishedActivity(userId, clickedActivityId) {
     try {
-      const { data } = await this.api.post("/api/user/userId/activities", id);
-      return data;
+      const data = { id: clickedActivityId };
+      const { data: updatedActivities } = await this.api.post(
+        `/api/user/${userId}/activities`,
+        data
+      );
+      return updatedActivities;
     } catch (error) {
       console.error("Error while saving users activity:", error);
       throw error;
