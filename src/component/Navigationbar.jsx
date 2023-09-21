@@ -13,6 +13,12 @@ function Navigationbar() {
         <Link className="nav-link" to={"/history"}>
           History
         </Link>
+        <Link className="nav-link" to={"/login"}>
+          Login
+        </Link>
+        <Link className="nav-link" to={"/signup"}>
+          Signup
+        </Link>
       </nav>
     </header>
   );
