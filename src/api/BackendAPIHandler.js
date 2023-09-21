@@ -37,6 +37,25 @@ export class BackendAPI {
     }
   }
 
+  async verifyUser(token) {
+    try {
+      const { data } = await this.api.get("/auth/verify", {
+        headers: { authorization: `Bearer ${token}` },
+      });
+      return data;
+    } catch (error) {
+      console.error("Error while verifying user:", error);
+    }
+  }
+
+  async signup(requestBody) {
+    try {
+      await this.api.post("/auth/signup", requestBody);
+    } catch (error) {
+      console.error("Error while signing up:", error);
+    }
+  }
+
   async getActivities() {
     try {
       const { data } = await this.api.get("/api/activities");
