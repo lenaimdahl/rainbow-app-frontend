@@ -5,6 +5,7 @@ const GlobalContext = createContext();
 
 const GlobalContextWrapper = ({ children }) => {
   const [activities, setActivities] = useState([]);
+
   const backendAPIInstance = new BackendAPI();
 
   const fetchActivities = async () => {
@@ -14,7 +15,12 @@ const GlobalContextWrapper = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ backendAPIInstance, activities, setActivities, fetchActivities }}
+      value={{
+        backendAPIInstance,
+        activities,
+        setActivities,
+        fetchActivities,
+      }}
     >
       {children}
     </GlobalContext.Provider>

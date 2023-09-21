@@ -1,29 +1,59 @@
-import ListGroup from "react-bootstrap/ListGroup";
+import { useContext, useState } from "react";
+import { GlobalContext } from "../context/global.context";
 
-function ActivityList({ activities, onActivityClick }) {
+function ActivityList({ activities }) {
+  const { backendAPIInstance } = useContext(GlobalContext);
+  const [clickedActivityId, setClickedActivityId] = useState(null);
+
+  const handleFinishedActivity = async (id, event) => {
+    event.preventDefault();
+    if (clickedActivityId === id) {
+      setClickedActivityId(null);
+    } else {
+      setClickedActivityId(id);
+      try {
+        await backendAPIInstance.saveFinishedActivity(id);
+        setClickedActivityId(null);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+  console.log(clickedActivityId);
+
   return (
     <>
-      <h3>Activities</h3>
-      <ListGroup>
-        {activities.map((activity, index) => (
-          <div
-            style={{
-              cursor: "pointer",
-              margin: 5,
-              width: 120,
-            }}
-          >
-            <ListGroup.Item
-              key={index}
-              className="activity-list"
-              onClick={() => onActivityClick(activity)}
+      <h3>All Activities</h3>
+      <div className="flex-wrap">
+        {activities.map((activity) => (
+          <div className="card" key={activity._id}>
+            <div
+              className={`box ${
+                clickedActivityId === activity._id ? "green-box" : ""
+              }`}
+              onClick={(event) => handleFinishedActivity(activity._id, event)}
+            ></div>
+            <div
+              style={{
+                color: "red",
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
             >
-              {activity.points}
+              {activity.points} 🏆
+            </div>
+            <div
+              style={{
+                paddingTop: 10,
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
+            >
               {activity.name}
-            </ListGroup.Item>
+            </div>
           </div>
         ))}
-      </ListGroup>
+      </div>
     </>
   );
 }

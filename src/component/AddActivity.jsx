@@ -20,7 +20,7 @@ function AddActivity({ fetchActivities, activities }) {
         name,
         points,
       };
-      await backendAPIInstance.saveActivity(newActivity);
+      await backendAPIInstance.saveNewActivity(newActivity);
       await fetchActivities();
     } catch (error) {
       console.error(error);
@@ -28,43 +28,53 @@ function AddActivity({ fetchActivities, activities }) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: 10,
+      }}
+    >
       {!isClicked && (
         <button
           className="button-open"
           type="submit"
           onClick={() => setIsClicked(!isClicked)}
         >
-          + New Activity
+          +
         </button>
       )}
       {isClicked && (
-        <form className="flex-column-left" onSubmit={handleAddActivity}>
-          <div className="margin">
-            <button
-              className="button-close"
-              type="submit"
-              onClick={() => setIsClicked(!isClicked)}
-            >
-              x
-            </button>
-            <label>Name: </label>
+        <form className="activity-form" onSubmit={handleAddActivity}>
+          <button
+            className="button-close"
+            type="submit"
+            onClick={() => setIsClicked(!isClicked)}
+          >
+            x
+          </button>
+          <div>
             <input
               type="string"
-              name="type"
+              placeholder="activity"
+              name="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-          <div className="margin">
+          <div>
             <input
               type="number"
-              name="type"
+              name="points"
+              placeholder="1"
               value={points}
               onChange={(event) => setPoints(event.target.value)}
             />
           </div>
-          <button className="margin" id="add-activity-button" type="submit">
+          <button
+            className="button-submit"
+            id="add-activity-button"
+            type="submit"
+          >
             +
           </button>
         </form>
