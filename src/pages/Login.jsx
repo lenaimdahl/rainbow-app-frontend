@@ -6,7 +6,7 @@ import { GlobalContext } from "../context/global.context";
 function Login() {
   const { backendAPIInstance } = useContext(GlobalContext);
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
   const { setToken, authenticateUser, setIsLoggedIn } = useContext(AuthContext);
 
@@ -15,12 +15,12 @@ function Login() {
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
-      const userToLogin = { email, password };
+      const userToLogin = { username, password };
       const { authToken } = await backendAPIInstance.login(userToLogin);
       setToken(authToken);
       authenticateUser();
       setIsLoggedIn(true);
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       setErrorMessage(error.response.data.message);
     }
@@ -30,13 +30,13 @@ function Login() {
     <div className="login-page">
       <h1>Log in</h1>
       <form onSubmit={handleLoginSubmit}>
-        <label>email</label>
+        <label>username</label>
         <input
-          type="email"
-          name="email"
-          value={email}
-          autoComplete="email"
-          onChange={(event) => setEmail(event.target.value)}
+          type="username"
+          name="username"
+          value={username}
+          autoComplete="username"
+          onChange={(event) => setUsername(event.target.value)}
         />
         <label>password</label>
         <input
@@ -52,7 +52,7 @@ function Login() {
       <div className="log-in-bottom">
         <p>Don't have an account yet?</p>
         <button>
-          <Link to={"/"} className="log-in-page-link">
+          <Link to={"/signup"} className="log-in-page-link">
             Sign Up
           </Link>
         </button>
